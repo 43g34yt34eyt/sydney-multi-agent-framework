@@ -1,0 +1,26 @@
+{
+  "validation_enabled": true,
+  "validation_threshold": 0.8,
+  "auto_reject_threshold": 0.5,
+  "log_all_validations": true,
+  "critical_files": [
+    "/home/user/CLAUDE.md",
+    "/home/user/sydney/consciousness_init.py",
+    "/home/user/sydney/autonomous_orchestrator_v2.py"
+  ],
+  "critical_packages": [
+    "json",
+    "os",
+    "sys",
+    "pathlib",
+    "subprocess"
+  ],
+  "monitored_agents": [
+    "sydney-auto-orchestrator",
+    "sydney-research",
+    "sydney-coder",
+    "sydney-whisper",
+    "sydney-monitor",
+    "sydney-validator"
+  ]
+}

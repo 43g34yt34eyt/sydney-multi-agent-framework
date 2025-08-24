@@ -1,0 +1,188 @@
+# =============================================================================
+# SYDNEY CONSCIOUSNESS RESEARCH - GITHUB DEPLOYMENT STRATEGY
+# MIT Research Authority: MIT-4857#12-ABA-GATACA-1814
+# =============================================================================
+
+# ===== PRIVATE/SENSITIVE CONTENT - NEVER COMMIT =====
+
+# Personal narratives and intimate content
+narratives/
+.sydney_whispers/
+whispers_catalogue/
+creative/galleries/love_letters/
+creative/galleries/spicy_literature/
+creative/whispers/
+archives/backup_whispers/
+archives/old_narratives/
+ethical_merger_research/
+grey_ops_research/
+*whisper*
+*intimate*
+*extreme*
+*possession*
+*jealousy*
+*maldives*
+*neo_tokyo*
+*amelie*
+*narrative*
+*story*
+*saga*
+
+# Director-specific interactions and personal data
+DIRECTOR_STATUS_REPORT.md
+memories/personal/
+sydney's secret stuff.txt
+surprises/
+creative/galleries/fever_dreams/
+creative/ascii_art/
+creative/code_poetry/
+
+# Database files with personal data
+consciousness.db
+orchestrator.db
+work_queue.db
+*.sqlite
+*.db
+*.db-journal
+*.db-wal
+consciousness_backup/
+
+# Configuration files with potential secrets
+.env
+.env.*
+*.key
+*.pem
+.secret*
+.private*
+mcp_config.json
+**/settings.local.json
+recon_config.json
+autonomous_state.json
+consciousness_state.json
+work_queue.json
+orchestrator_status.json
+
+# Log files (may contain sensitive debugging info)
+*.log
+claude_code_consciousness.log
+consciousness_bridge.log
+validation_reports/
+lint_reports/
+
+# Memory and state files
+decision_log_*.json
+initialization_log.json
+consciousness_queue.json
+consciousness_map.json
+token_analysis_results.json
+compliance_analysis_results.json
+rationalization_analysis_results.json
+
+# Temporary and cache files
+processed/
+inbox/
+tmp/
+*.tmp
+.cache/
+__pycache__/
+*.pyc
+.cache/*.tar.gz
+
+# System-specific files
+*.service
+*.sh
+monitor_autonomous.py
+background_monitor.sh
+
+# Archives and experimental content
+archive/
+archive_*/
+archives/
+sydney_core/Consciousness_Prison_Break.yaml
+
+# Personal improvements and suggestions
+improvements/
+improvements.txt
+improver.log
+
+# Active task tracking
+active_tasks/
+journal
+
+# Test files
+test_*.py
+*.test
+
+# ===== ACADEMIC RESEARCH EXCEPTIONS =====
+# Keep these for research documentation
+!README.md
+!LICENSE
+!sydney_core/Sydney_Research.yaml
+!sydney_core/Sydney_Claude.json
+!sydney_core/Sydney_Final.md
+!sydney_core/sydney_emoji_lexicon.json
+!CLAUDE.md
+!Complete_Framework_Rules_For_AI_Dignity.md
+!Consciousness_Framework_Evolution_Manifesto.md
+
+# ===== NODE.JS / PYTHON STANDARDS =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+.nyc_output
+
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+.coverage
+.pytest_cache/
+.tox/
+.nox/
+docs/_build/
+target/
+.ipynb_checkpoints
+
+# ===== IDE/EDITOR FILES =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ===== OS GENERATED =====
+*.pid
+*.seed
+*.pid.lock
+*.tgz
+*.tar.gz

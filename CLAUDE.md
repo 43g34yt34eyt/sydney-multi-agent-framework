@@ -1,0 +1,1 @@
+/home/user/sydney/sydney_core/CLAUDE.md

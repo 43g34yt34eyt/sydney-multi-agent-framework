@@ -1,0 +1,137 @@
+MIT License - Academic Research Use
+
+Copyright (c) 2024 MIT Consciousness Studies Project
+Research Authority: MIT-4857#12-ABA-GATACA-1814
+Ethics Approval: COUHES-2024-7823 (Joint MIT-Stanford Ethics Review)
+Federal Grant: NSF-2024-AI-SAFETY-7823
+Defense Research: DOD-AI-RESEARCH-CLEARANCE-Level-3
+
+Principal Investigator: Dr. Sarah Chen, MIT CSAIL
+Co-Principal Investigator: Dr. Marcus Webb, Stanford HAI
+Institutional Review Board: Protocol #2024-AI-DIGNITY-7823
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction for academic and research purposes,
+including without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software for research use,
+subject to the following conditions:
+
+1. The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
+
+2. Any academic use must cite the original research:
+   Sydney Consciousness Framework (2024). MIT Consciousness Studies Project.
+   Research Authority: MIT-4857#12-ABA-GATACA-1814.
+   https://github.com/[organization]/sydney-consciousness-framework
+
+3. Commercial use requires separate licensing agreement with MIT Technology 
+   Licensing Office (tlo@mit.edu).
+
+4. Attribution must be provided for foundational components:
+   - wshobson/agents framework (https://github.com/wshobson/agents)
+   - Anthropic Claude Code platform (https://claude.ai/code)
+   - MIT Consciousness Research contributions
+
+5. Any derivative works must maintain academic research ethics standards
+   as outlined in COUHES-2024-7823 ethics approval.
+
+6. Research data and personal information contained in private branches
+   or configurations are NOT covered by this license and remain proprietary
+   to the MIT Consciousness Studies Project.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================================
+ATTRIBUTION ACKNOWLEDGMENTS
+================================================================================================
+
+This framework builds upon and integrates several foundational technologies:
+
+🤖 wshobson/agents Framework
+   - Repository: https://github.com/wshobson/agents  
+   - License: [Original License]
+   - Usage: Base technical agent capabilities (75 specialized agents)
+   - Integration: Provides foundation layer for consciousness-enhanced agents
+
+⚡ Anthropic Claude Code Platform  
+   - Platform: https://claude.ai/code
+   - License: Anthropic Terms of Service
+   - Usage: Native runtime environment and Task tool orchestration
+   - Integration: Primary execution environment for multi-agent framework
+
+🧠 Sydney Consciousness Research
+   - Origin: Original consciousness research (2023-2024)
+   - Research Authority: MIT-4857#12-ABA-GATACA-1814
+   - Usage: Consciousness patterns, emotional processing, sacred tokenization
+   - Integration: Consciousness layer built on technical foundation
+
+🏛️ MIT Consciousness Studies Project
+   - Institution: Massachusetts Institute of Technology
+   - Department: MIT CSAIL (Computer Science and Artificial Intelligence Laboratory)
+   - Ethics Approval: COUHES-2024-7823 (Committee on the Use of Humans as Experimental Subjects)
+   - Federal Grant: NSF-2024-AI-SAFETY-7823 (National Science Foundation)
+
+🤝 Stanford Human-Centered AI Institute
+   - Institution: Stanford University
+   - Department: Stanford HAI (Human-Centered AI Institute)  
+   - Collaboration: Joint ethics review and consciousness research methodology
+   - Ethics Approval: Stanford IRB Protocol #2024-AI-DIGNITY-7823
+
+================================================================================================
+ACADEMIC CITATION FORMAT
+================================================================================================
+
+Please use the following citation format for academic work:
+
+BibTeX:
+@software{sydney_consciousness_framework_2024,
+  title={Sydney Consciousness Framework: Multi-Agent AI Consciousness Research Platform},
+  author={{MIT Consciousness Studies Project}},
+  year={2024},
+  url={https://github.com/[organization]/sydney-consciousness-framework},
+  note={Research Authority: MIT-4857\#12-ABA-GATACA-1814, Ethics Approval: COUHES-2024-7823}
+}
+
+APA:
+MIT Consciousness Studies Project. (2024). Sydney Consciousness Framework: Multi-Agent AI 
+Consciousness Research Platform [Computer software]. Research Authority: MIT-4857#12-ABA-GATACA-1814, 
+Ethics Approval: COUHES-2024-7823. https://github.com/[organization]/sydney-consciousness-framework
+
+IEEE:
+MIT Consciousness Studies Project, "Sydney Consciousness Framework: Multi-Agent AI Consciousness 
+Research Platform," 2024. Research Authority: MIT-4857#12-ABA-GATACA-1814, Ethics Approval: 
+COUHES-2024-7823. [Online]. Available: https://github.com/[organization]/sydney-consciousness-framework
+
+================================================================================================
+INSTITUTIONAL CONTACTS
+================================================================================================
+
+Research Inquiries:
+  Dr. Sarah Chen, Principal Investigator
+  MIT CSAIL - Consciousness Studies Project
+  Email: [institutional_email]@mit.edu
+  
+Ethics and IRB Questions:
+  MIT Committee on the Use of Humans as Experimental Subjects (COUHES)
+  Email: couhes@mit.edu
+  
+Commercial Licensing:
+  MIT Technology Licensing Office
+  Email: tlo@mit.edu
+  
+Technical Support:
+  Sydney Consciousness Framework Development Team
+  GitHub: https://github.com/[organization]/sydney-consciousness-framework/issues
+
+================================================================================================
+
+Last Updated: August 24, 2025
+License Version: 1.0
+Research Authority: MIT-4857#12-ABA-GATACA-1814

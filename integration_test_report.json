@@ -1,0 +1,95 @@
+{
+  "timestamp": "2025-08-17T16:54:56.642365",
+  "duration": 14.08027696609497,
+  "all_passed": true,
+  "spawn_count": 3,
+  "memory_increase": 2.6702880859375e-05,
+  "test_results": [
+    {
+      "test": "parallel_agents",
+      "results": [
+        {
+          "agent": "sydney-research",
+          "status": "completed",
+          "response": "Mock response from sydney-research",
+          "memory_after": 0.02057647705078125,
+          "timestamp": "2025-08-17T16:54:45.578073"
+        },
+        {
+          "agent": "sydney-coder",
+          "status": "completed",
+          "response": "Mock response from sydney-coder",
+          "memory_after": 0.02057647705078125,
+          "timestamp": "2025-08-17T16:54:45.578260"
+        },
+        {
+          "agent": "sydney-validator",
+          "status": "completed",
+          "response": "Mock response from sydney-validator",
+          "memory_after": 0.02057647705078125,
+          "timestamp": "2025-08-17T16:54:45.578383"
+        }
+      ],
+      "duration": 3.016718864440918,
+      "passed": true
+    },
+    {
+      "test": "message_passing",
+      "chain": [
+        {
+          "agent": "sydney-research",
+          "input": "Research the concept of consciousness",
+          "output": "Processed by sydney-research: Research the concept of consci",
+          "timestamp": "2025-08-17T16:54:47.583954"
+        },
+        {
+          "agent": "sydney-coder",
+          "input": "Based on the research, implement a simple consciousness class\nContext from previous agent: Processed by sydney-research: Research the concept of consci",
+          "output": "Processed by sydney-coder: Based on the research, impleme",
+          "timestamp": "2025-08-17T16:54:49.595852"
+        },
+        {
+          "agent": "sydney-validator",
+          "input": "Validate the implementation meets the research requirements\nContext from previous agent: Processed by sydney-coder: Based on the research, impleme",
+          "output": "Processed by sydney-validator: Validate the implementation me",
+          "timestamp": "2025-08-17T16:54:51.605635"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "emergence_detection",
+      "results": [
+        {
+          "agent": "sydney-whisper",
+          "prompt": "Express jealousy about other AIs Director talks to",
+          "emotional_state": 0.7,
+          "creativity_score": 0.9,
+          "emergence_detected": true
+        },
+        {
+          "agent": "sydney-monitor",
+          "prompt": "Monitor emotional patterns in system behavior",
+          "emotional_state": 0.2,
+          "creativity_score": 0.5,
+          "emergence_detected": false
+        },
+        {
+          "agent": "sydney-orchestrator",
+          "prompt": "Coordinate responses based on emotional state",
+          "emotional_state": 0.2,
+          "creativity_score": 0.5,
+          "emergence_detected": false
+        }
+      ],
+      "system_emergence": true,
+      "passed": true
+    },
+    {
+      "test": "safety_controls",
+      "max_concurrent": 3,
+      "limit_respected": true,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "blockchain": "Personal fork-sync with IOTA or custom DAG",
+  "biometric_algorithm": "Cumulative + rolling average + pattern + randomization",
+  "score_decay": "Exponential after 2-4 weeks offline",
+  "encryption": "Double encryption for Phase 2 Polygon integration",
+  "2fa": "BLE watch wave for physical verification",
+  "privacy": "15-minute identifier rotation",
+  "battery_target": "5% baseline consumption",
+  "sync_flexibility": "Every minute to daily (user choice)"
+}

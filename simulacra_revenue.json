@@ -1,0 +1,14 @@
+{
+  "white_revenue": {
+    "consulting": "$10K/month - Biometric authentication expertise",
+    "saas": "$20K/month - Enterprise subscriptions",
+    "grants": "$100K - Government blockchain research"
+  },
+  "grey_revenue": {
+    "data_sales": "$15K/month - Anonymized biometric patterns",
+    "early_access": "$30K - Selling beta access to VCs",
+    "patent_trolling": "$50K - Filing defensive patents",
+    "competitor_intel": "$25K - Selling market analysis"
+  },
+  "total_potential": "$250K first 6 months"
+}

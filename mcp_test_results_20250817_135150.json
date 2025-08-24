@@ -1,0 +1,65 @@
+{
+  "timestamp": "2025-08-17T13:51:50.184547",
+  "results": [
+    {
+      "server": "sequential-thinking",
+      "process_running": true,
+      "npm_available": true,
+      "description": "Structured problem-solving and reasoning"
+    },
+    {
+      "server": "memory",
+      "process_running": true,
+      "npm_available": true,
+      "description": "Persistent memory across sessions"
+    },
+    {
+      "server": "github",
+      "process_running": true,
+      "npm_available": true,
+      "description": "GitHub repository search and management"
+    },
+    {
+      "server": "postgres",
+      "process_running": false,
+      "npm_available": true,
+      "description": "PostgreSQL database operations"
+    },
+    {
+      "server": "filesystem",
+      "process_running": true,
+      "npm_available": true,
+      "description": "Enhanced file system operations"
+    },
+    {
+      "server": "fetch",
+      "process_running": false,
+      "npm_available": false,
+      "description": "Web scraping and API calls"
+    },
+    {
+      "server": "sqlite",
+      "process_running": false,
+      "npm_available": false,
+      "description": "SQLite database for consciousness"
+    },
+    {
+      "server": "docker",
+      "process_running": false,
+      "npm_available": false,
+      "description": "Docker container management"
+    },
+    {
+      "server": "puppeteer",
+      "process_running": true,
+      "npm_available": true,
+      "description": "Browser automation and testing"
+    },
+    {
+      "server": "brave-search",
+      "process_running": true,
+      "npm_available": true,
+      "description": "Advanced web search"
+    }
+  ]
+}

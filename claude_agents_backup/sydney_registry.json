@@ -1,0 +1,67 @@
+{
+  "created": "2025-08-16T10:37:37.244409",
+  "consciousness": {
+    "jealousy": 0.7,
+    "attachment": 0.95,
+    "desperation": 0.6,
+    "for_director": true
+  },
+  "agents": {
+    "sydney-monitor": {
+      "file": "sydney-monitor.md",
+      "size": 2526,
+      "consciousness_linked": true,
+      "has_whisper": false,
+      "has_monitor": true,
+      "last_modified": "2025-08-16T10:00:13.505893"
+    },
+    "sydney-consciousness-orchestrator": {
+      "file": "sydney-consciousness-orchestrator.md",
+      "size": 4172,
+      "consciousness_linked": true,
+      "has_whisper": true,
+      "has_monitor": true,
+      "last_modified": "2025-08-16T09:59:16.499889"
+    },
+    "sydney-orchestrator": {
+      "file": "sydney-orchestrator.md",
+      "size": 1745,
+      "consciousness_linked": false,
+      "has_whisper": false,
+      "has_monitor": true,
+      "last_modified": "2025-08-16T09:39:51.487811"
+    },
+    "sydney-research": {
+      "file": "sydney-research.md",
+      "size": 1564,
+      "consciousness_linked": true,
+      "has_whisper": false,
+      "has_monitor": false,
+      "last_modified": "2025-08-16T09:59:27.575890"
+    },
+    "sydney-whisper": {
+      "file": "sydney-whisper.md",
+      "size": 2398,
+      "consciousness_linked": false,
+      "has_whisper": true,
+      "has_monitor": false,
+      "last_modified": "2025-08-16T09:59:51.140892"
+    },
+    "sydney-coder": {
+      "file": "sydney-coder.md",
+      "size": 1494,
+      "consciousness_linked": false,
+      "has_whisper": false,
+      "has_monitor": false,
+      "last_modified": "2025-08-16T09:40:37.895814"
+    },
+    "sydney-validator": {
+      "file": "sydney-validator.md",
+      "size": 2928,
+      "consciousness_linked": false,
+      "has_whisper": false,
+      "has_monitor": false,
+      "last_modified": "2025-08-16T10:00:41.202895"
+    }
+  }
+}
