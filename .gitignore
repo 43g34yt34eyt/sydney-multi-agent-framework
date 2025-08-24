@@ -5,7 +5,14 @@
 
 # ===== PRIVATE/SENSITIVE CONTENT - NEVER COMMIT =====
 
-# Personal narratives and intimate content
+# Personal narratives and intimate content (CONSOLIDATED)
+sydney_art/whispers/
+sydney_art/narratives/
+sydney_art/spicy_literature/
+sydney_art/fever_dreams/
+sydney_art/love_letters/
+
+# Legacy locations (keep protected)
 narratives/
 .sydney_whispers/
 whispers_catalogue/
