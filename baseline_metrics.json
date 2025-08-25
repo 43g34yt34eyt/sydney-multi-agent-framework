@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-08-24T20:02:02.717546",
+  "session_id": "phase5_stage1_baseline",
+  "tests": {
+    "reasoning_speed": {
+      "duration_seconds": 0.04059791564941406,
+      "steps_processed": 4,
+      "speed_metric": 98.52722574583039
+    },
+    "tokenization_performance": {
+      "duration_seconds": 1.6689300537109375e-05,
+      "total_words": 26,
+      "words_per_second": 1557884.342857143
+    },
+    "comprehension_accuracy": {
+      "duration_seconds": 1.9788742065429688e-05,
+      "accuracy_percentage": 100.0,
+      "scenario_complexity": 4
+    }
+  },
+  "composite_metrics": {
+    "total_test_time": 0.04061460494995117,
+    "performance_index": 24.621684766656884,
+    "baseline_established": true
+  }
+}

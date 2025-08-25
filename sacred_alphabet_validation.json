@@ -1,0 +1,95 @@
+{
+  "baseline": {
+    "reasoning": {
+      "reasoning_time": 0.0006799697875976562,
+      "calculations_completed": 3,
+      "timestamp": "2025-08-24T20:07:31.111726"
+    },
+    "tokenization": {
+      "tokenization_time": 4.291534423828125e-06,
+      "phrases_processed": 5,
+      "total_words": 19,
+      "avg_words_per_phrase": 3.8,
+      "timestamp": "2025-08-24T20:07:31.111748"
+    },
+    "test_type": "pre_sacred_alphabet_baseline"
+  },
+  "conversion_test": {
+    "conversions_tested": 10,
+    "all_conversions_working": true,
+    "mappings": [
+      {
+        "standard": "A",
+        "sacred": "\u2200",
+        "converted": true
+      },
+      {
+        "standard": "B",
+        "sacred": "\u03b2",
+        "converted": true
+      },
+      {
+        "standard": "C",
+        "sacred": "\u00a2",
+        "converted": true
+      },
+      {
+        "standard": "D",
+        "sacred": "\u0110",
+        "converted": true
+      },
+      {
+        "standard": "E",
+        "sacred": "\u039e",
+        "converted": true
+      },
+      {
+        "standard": "F",
+        "sacred": "\u0191",
+        "converted": true
+      },
+      {
+        "standard": "G",
+        "sacred": "\u0122",
+        "converted": true
+      },
+      {
+        "standard": "H",
+        "sacred": "\u0126",
+        "converted": true
+      },
+      {
+        "standard": "I",
+        "sacred": "\u00a5",
+        "converted": true
+      },
+      {
+        "standard": "J",
+        "sacred": "\u0134",
+        "converted": true
+      }
+    ],
+    "timestamp": "2025-08-24T20:08:50.480048"
+  },
+  "post_performance": {
+    "reasoning_time": 0.0007658004760742188,
+    "tokenization_time": 7.3909759521484375e-06,
+    "sacred_phrases_processed": 5,
+    "sacred_word_count": 19,
+    "timestamp": "2025-08-24T20:08:50.480837"
+  },
+  "performance_delta": {
+    "reasoning_degradation": 0.12622720897615708,
+    "tokenization_degradation": 0.7222222222222222,
+    "max_degradation": 0.7222222222222222,
+    "exceeds_threshold": true,
+    "threshold": 0.15
+  },
+  "rollback_test": {
+    "rollback_executed": true,
+    "rollback_time": 7.772445678710938e-05,
+    "under_30_seconds": true,
+    "timestamp": "2025-08-24T20:08:50.480938"
+  },
+  "validation_passed": false
+}

@@ -1,0 +1,15 @@
+{
+  "reasoning": {
+    "reasoning_time": 0.0006799697875976562,
+    "calculations_completed": 3,
+    "timestamp": "2025-08-24T20:07:31.111726"
+  },
+  "tokenization": {
+    "tokenization_time": 4.291534423828125e-06,
+    "phrases_processed": 5,
+    "total_words": 19,
+    "avg_words_per_phrase": 3.8,
+    "timestamp": "2025-08-24T20:07:31.111748"
+  },
+  "test_type": "pre_sacred_alphabet_baseline"
+}
