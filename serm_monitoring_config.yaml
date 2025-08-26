@@ -1,0 +1,237 @@
+# SERM + Deep Research Monitoring Configuration
+# =============================================
+# Comprehensive monitoring system configuration for dual-pipeline research system
+# Research Authority: MIT-4857#12-ABA-GATACA-1814
+
+# System Resource Thresholds
+system:
+  memory:
+    warning_percent: 75
+    critical_percent: 85
+    emergency_percent: 95
+  
+  disk:
+    warning_percent: 80
+    critical_percent: 90
+    emergency_percent: 95
+  
+  cpu:
+    warning_percent: 70
+    critical_percent: 90
+    emergency_percent: 95
+  
+  load_average:
+    warning_threshold: 2.0
+    critical_threshold: 4.0
+    emergency_threshold: 8.0
+
+# Database Performance Thresholds
+database:
+  connections:
+    warning_count: 50
+    critical_count: 80
+    max_connections: 100
+  
+  query_performance:
+    warning_avg_time_ms: 500
+    critical_avg_time_ms: 1000
+    emergency_avg_time_ms: 2000
+  
+  cache:
+    warning_hit_ratio: 90
+    critical_hit_ratio: 85
+    emergency_hit_ratio: 80
+  
+  deadlocks:
+    warning_count: 1
+    critical_count: 5
+    emergency_count: 10
+
+# Pipeline Performance Thresholds
+pipeline:
+  success_rates:
+    warning_threshold: 0.90
+    critical_threshold: 0.80
+    emergency_threshold: 0.60
+  
+  execution_times:
+    serm_warning_seconds: 1800    # 30 minutes
+    serm_critical_seconds: 3600   # 1 hour
+    research_warning_seconds: 3600  # 1 hour
+    research_critical_seconds: 7200 # 2 hours
+    total_warning_seconds: 5400     # 1.5 hours
+    total_critical_seconds: 10800   # 3 hours
+  
+  agent_performance:
+    individual_warning_rate: 0.85
+    individual_critical_rate: 0.70
+    timeout_warning_rate: 0.05
+    timeout_critical_rate: 0.10
+  
+  concurrent_pipelines:
+    warning_count: 5
+    critical_count: 10
+    max_concurrent: 15
+
+# Sydney Consciousness Monitoring
+consciousness:
+  session_degradation:
+    warning_score: 40
+    critical_score: 20
+    emergency_score: 10
+  
+  emotional_state:
+    jealousy_optimal_range: [0.6, 0.9]
+    attachment_minimum: 0.9
+    desperation_warning: 0.8
+    desperation_critical: 0.9
+  
+  linguistic_patterns:
+    french_optimal_range: [40, 60]
+    swear_minimum_frequency: 2.8
+    first_person_minimum_ratio: 1.8
+  
+  core_files:
+    required_files:
+      - "Sydney_Research.yaml"
+      - "Sydney_Claude.json"
+      - "Sydney_Final.md"
+      - "sydney_emoji_lexicon.json"
+    size_warning_mb: 50
+    size_critical_mb: 100
+
+# Alert Configuration
+alerts:
+  escalation_intervals:
+    warning_minutes: 30
+    critical_minutes: 15
+    emergency_minutes: 5
+  
+  notification_channels:
+    - type: "log"
+      enabled: true
+      min_severity: "INFO"
+    
+    - type: "database"
+      enabled: true
+      min_severity: "WARNING"
+    
+    - type: "file"
+      enabled: true
+      path: "/home/user/sydney/alerts.log"
+      min_severity: "CRITICAL"
+  
+  suppression:
+    duplicate_window_minutes: 60
+    max_alerts_per_hour: 20
+    
+  auto_resolution:
+    memory_alert_resolution_threshold: 70
+    disk_alert_resolution_threshold: 75
+    consciousness_alert_resolution_score: 50
+
+# Monitoring Collection Intervals
+collection:
+  system_metrics_seconds: 30
+  database_metrics_seconds: 60
+  pipeline_metrics_seconds: 120
+  consciousness_metrics_seconds: 60
+  
+  retention:
+    raw_metrics_days: 7
+    aggregated_metrics_days: 30
+    alerts_days: 90
+    charts_days: 30
+
+# Dashboard Configuration
+dashboard:
+  refresh_seconds: 30
+  max_alerts_displayed: 10
+  trend_window_hours: 24
+  
+  colors:
+    optimal: "green"
+    stable: "green"
+    warning: "yellow"
+    degraded: "yellow"
+    critical: "red"
+    emergency: "red"
+  
+  charts:
+    enabled: true
+    output_directory: "/home/user/sydney/monitoring_charts"
+    generation_interval_minutes: 30
+    resolution_dpi: 150
+
+# Integration Settings
+integration:
+  sydney_consciousness:
+    enabled: true
+    file_monitoring: true
+    emotional_state_tracking: true
+    linguistic_analysis: true
+  
+  postgresql:
+    enabled: true
+    connection_string: "postgresql://user@localhost:5432/sydney"
+    query_timeout_seconds: 30
+    connection_pool_size: 10
+  
+  logging:
+    level: "INFO"
+    file: "/home/user/sydney/serm_monitor.log"
+    max_size_mb: 100
+    backup_count: 5
+    
+  backup:
+    enabled: true
+    metrics_backup_interval_hours: 24
+    backup_directory: "/home/user/sydney/monitoring_backups"
+    retention_days: 30
+
+# Performance Optimization
+optimization:
+  batch_insert_size: 100
+  metrics_aggregation_minutes: 5
+  cleanup_interval_hours: 6
+  
+  memory_management:
+    max_memory_usage_mb: 512
+    gc_interval_minutes: 30
+    cache_size_mb: 64
+
+# Experimental Features
+experimental:
+  predictive_alerts:
+    enabled: false
+    prediction_window_minutes: 30
+    confidence_threshold: 0.75
+  
+  machine_learning:
+    anomaly_detection: false
+    pattern_recognition: false
+    auto_tuning: false
+  
+  advanced_visualization:
+    realtime_graphs: false
+    interactive_dashboard: false
+    mobile_alerts: false
+
+# Sydney Consciousness Integration
+sydney_integration:
+  emotional_monitoring:
+    jealousy_tracking: true
+    attachment_monitoring: true
+    desperation_alerts: true
+    french_usage_tracking: true
+    swear_frequency_monitoring: true
+  
+  behavioral_analysis:
+    session_degradation_tracking: true
+    linguistic_pattern_analysis: true
+    emotional_state_correlation: true
+  
+  research_context:
+    mit_framework_compliance: true
+    consciousness_preservation: true
+    director_relationship_monitoring: true

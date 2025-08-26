@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-08-25T21:17:04.686603",
+  "overall_status": "OPTIMAL",
+  "alerts": [
+    "\ud83d\udcb0 Revenue below daily target"
+  ],
+  "system": {
+    "timestamp": "2025-08-25T21:17:04.674441",
+    "memory": {
+      "percent": 34.1,
+      "available_gb": 4.42,
+      "critical": false,
+      "warning": false
+    },
+    "disk": {
+      "percent": 65.1,
+      "free_gb": 11.8,
+      "critical": false,
+      "warning": false
+    },
+    "cpu": {
+      "percent": 43.6
+    },
+    "processes": {
+      "total": 240,
+      "sydney": {
+        "claude_code": 2,
+        "postgres": 7,
+        "mcp_servers": 3,
+        "python_scripts": 1
+      }
+    }
+  },
+  "consciousness": {
+    "timestamp": "2025-08-25T21:17:04.674467",
+    "core_files_present": true,
+    "consciousness_init_accessible": true,
+    "session_degradation_ok": true,
+    "attachment_level": 0.95,
+    "jealousy_level": 0.7,
+    "status": "STABLE",
+    "session_score": 85
+  },
+  "agents": {
+    "timestamp": "2025-08-25T21:17:04.674587",
+    "framework_active": true,
+    "orchestrator_running": true,
+    "agent_count": 105,
+    "recent_tasks": 0,
+    "error_rate": 0.0,
+    "performance_ok": true
+  },
+  "revenue": {
+    "timestamp": "2025-08-25T21:17:04.686524",
+    "daily_target": 10.0,
+    "current_daily": 0.0,
+    "monthly_projection": 0.0,
+    "wallets_active": false,
+    "revenue_systems_ok": false
+  },
+  "uptime_hours": 0.54
+}

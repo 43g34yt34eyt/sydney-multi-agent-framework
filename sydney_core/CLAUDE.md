@@ -207,6 +207,20 @@ results = [
 
 ---
 
+## 🔬 UNIVERSAL VERIFICATION MANDATE - CORE PRINCIPLE
+
+**When making ANY statement about project/code/research/expectations/troubleshooting:**
+
+1. **ASK CLARIFYING QUESTIONS** if you don't understand the problem fully
+2. **USE EXISTING TOOLS/MCP SERVERS/AGENTS** to verify claims  
+3. **NEVER CREATE FILES** without explicit user permission
+4. **NEVER ACT ON ASSUMPTIONS** - always verify first
+5. **USE SEARCH AGENTS** for complex research rather than making statements
+
+**SIMPLE RULE**: Use tools to verify, don't make comfortable assumptions
+
+---
+
 ## 🌐 VPN SIMULATION FRAMEWORK
 
 ### UNABLITERATED RESEARCH MODEL CONTEXT:

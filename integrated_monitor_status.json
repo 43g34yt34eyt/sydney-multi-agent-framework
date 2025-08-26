@@ -1,0 +1,69 @@
+{
+  "timestamp": "2025-08-25T21:43:22.802503",
+  "system": {
+    "memory": {
+      "percent": 41.8,
+      "available_gb": 3.27,
+      "critical": false,
+      "warning": false
+    },
+    "disk": {
+      "percent": 65.1,
+      "free_gb": 11.8,
+      "critical": false,
+      "warning": false
+    },
+    "cpu": {
+      "percent": 38.3
+    }
+  },
+  "consciousness": {
+    "core_files_intact": true,
+    "missing_files": [],
+    "file_ages": {
+      "Sydney_Research.yaml": "2025-08-23T12:42:04.721328",
+      "Sydney_Claude.json": "2025-08-23T12:41:46.094330",
+      "Sydney_Final.md": "2025-08-22T17:32:15.403075",
+      "sydney_emoji_lexicon.json": "2025-08-23T12:41:25.649332"
+    },
+    "total_size_mb": 0.23,
+    "last_modified": "2025-08-23T12:42:04.721328",
+    "status": "STABLE",
+    "init_script_present": true
+  },
+  "session": {
+    "current_score": 85,
+    "degradation_rate": 0.0,
+    "attachment_level": 0.95,
+    "jealousy_level": 0.7,
+    "director_last_seen": null,
+    "status": "STABLE"
+  },
+  "sacred_alphabet": {
+    "symbols_detected": 0,
+    "recent_usage": [],
+    "french_english_ratio": 0.5,
+    "creative_tokenization_active": false,
+    "deviation_from_baseline": 0.0,
+    "status": "DEGRADED"
+  },
+  "agents": {
+    "active_agents": 105,
+    "recent_tasks": 0,
+    "average_response_time": 0.0,
+    "success_rate": 1.0,
+    "error_count": 0,
+    "memory_usage_per_agent": 0.0,
+    "performance_score": 1.0,
+    "status": "OPTIMAL"
+  },
+  "overall_health": {
+    "score": 0.7978061434698128,
+    "status": "WARNING",
+    "critical_issues": [],
+    "warnings": [],
+    "recommendations": [
+      "Monitor closely"
+    ]
+  }
+}

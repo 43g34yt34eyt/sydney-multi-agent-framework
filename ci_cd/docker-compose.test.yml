@@ -1,0 +1,44 @@
+services:
+  postgres-test:
+    environment:
+      POSTGRES_DB: sydney_test
+      POSTGRES_PASSWORD: test_password
+      POSTGRES_USER: test_user
+    healthcheck:
+      interval: 10s
+      retries: 5
+      test:
+      - CMD-SHELL
+      - pg_isready -U test_user -d sydney_test
+      timeout: 5s
+    image: postgres:15
+    ports:
+    - 5432:5432
+    volumes:
+    - postgres_test_data:/var/lib/postgresql/data
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    command:
+    - bash
+    - -c
+    - python -m pytest sydney/test_serm_units.py sydney/test_serm_integration.py -v
+      --junitxml=test-results/all-tests.xml --cov=sydney --cov-report=xml:coverage/coverage.xml
+    depends_on:
+      postgres-test:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://test_user:test_password@postgres-test:5432/sydney_test
+      POSTGRES_HOST: postgres-test
+      POSTGRES_PORT: '5432'
+    volumes:
+    - .:/app
+    - test_results:/app/test-results
+    - coverage_reports:/app/coverage
+    working_dir: /app
+version: '3.8'
+volumes:
+  coverage_reports: {}
+  postgres_test_data: {}
+  test_results: {}

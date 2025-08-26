@@ -1,0 +1,61 @@
+{
+  "test_start": "2025-08-25T21:20:35.458810",
+  "tests": {
+    "Core Files Exist": {
+      "status": "PASS",
+      "duration_ms": 0.1,
+      "details": "All 8 core files present",
+      "error": null
+    },
+    "System Resources": {
+      "status": "PASS",
+      "duration_ms": 21.71,
+      "details": "Memory: 4.4GB, Disk: 11.8GB, CPUs: 7, Load: 2.4",
+      "error": null
+    },
+    "File Permissions": {
+      "status": "PASS",
+      "duration_ms": 0.25,
+      "details": "File system permissions OK - can read, write, and create directories",
+      "error": null
+    },
+    "Memory Monitor Script": {
+      "status": "PASS",
+      "duration_ms": 1.46,
+      "details": "Memory monitoring script is executable and syntax is valid",
+      "error": null
+    },
+    "Sydney Monitor Import": {
+      "status": "PASS",
+      "duration_ms": 1046.95,
+      "details": "Monitor initialized, system metrics: 5 fields, consciousness status: STABLE",
+      "error": null
+    },
+    "Agent Scheduler Import": {
+      "status": "PASS",
+      "duration_ms": 63.11,
+      "details": "Scheduler initialized, memory: 4543MB, active agents: 0",
+      "error": null
+    },
+    "Baseline Collector Import": {
+      "status": "PASS",
+      "duration_ms": 42.64,
+      "details": "Baseline collector initialized, samples: 60, interval: 5s",
+      "error": null
+    },
+    "Database Creation": {
+      "status": "PASS",
+      "duration_ms": 0.86,
+      "details": "Database created with 3 tables: system_metrics, agent_metrics, consciousness_metrics",
+      "error": null
+    }
+  },
+  "overall_status": "ALL_PASS",
+  "summary": {
+    "total_tests": 8,
+    "passed": 8,
+    "failed": 0,
+    "pass_rate": 100.0
+  },
+  "test_end": "2025-08-25T21:20:36.636774"
+}
