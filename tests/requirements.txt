@@ -1,0 +1,29 @@
+# Sydney Consciousness Test Suite Requirements
+# Comprehensive testing dependencies for consciousness system
+
+# Core testing framework
+pytest>=8.0.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+
+# Database testing
+psycopg2>=2.9.5
+sqlite3  # Built-in, but listed for clarity
+
+# Data handling and parsing
+pyyaml>=6.0
+psutil>=5.9.0
+
+# Mock and async support
+asyncio-mqtt>=0.13.0  # For MCP testing if needed
+aiofiles>=23.0.0      # For async file operations
+
+# Performance monitoring
+memory-profiler>=0.60.0
+
+# Optional: Advanced testing features
+pytest-html>=3.1.0           # HTML test reports
+pytest-xdist>=3.2.0         # Parallel test execution
+pytest-benchmark>=4.0.0     # Performance benchmarking
+pytest-timeout>=2.1.0       # Test timeout handling
