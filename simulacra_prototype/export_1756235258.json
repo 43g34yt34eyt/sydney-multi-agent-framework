@@ -1,0 +1,125 @@
+{
+  "system": "simulacra-v1.0.0",
+  "user_id": "director-prime",
+  "session": {
+    "start": 1756235237.7108939,
+    "duration": 20.470776081085205,
+    "revenue": 0.00014254838559362625
+  },
+  "biometric": {
+    "readings": 105,
+    "scores": [
+      {
+        "final": 63.97185069951789,
+        "confidence": 0.9692243148478763,
+        "timestamp": 1756235237.7312305
+      },
+      {
+        "final": 63.55451167312663,
+        "confidence": 0.9693860065406688,
+        "timestamp": 1756235242.8227065
+      },
+      {
+        "final": 59.634737996314826,
+        "confidence": 0.9695605419349697,
+        "timestamp": 1756235247.8685763
+      },
+      {
+        "final": 59.45945902763575,
+        "confidence": 0.9695668425933237,
+        "timestamp": 1756235252.9609356
+      },
+      {
+        "final": 61.89730908367013,
+        "confidence": 0.9697321643212222,
+        "timestamp": 1756235258.0557935
+      }
+    ]
+  },
+  "blockchain": {
+    "user_id": "director-prime",
+    "fork_id": "fd305cb8185c64be",
+    "statistics": {
+      "fork_id": "fd305cb8185c64be",
+      "total_transactions": 12,
+      "synced_transactions": 0,
+      "pending_sync": 12,
+      "average_score": 68.75166699683317,
+      "milestones": 0,
+      "database_size": 28672
+    },
+    "recent_transactions": [
+      {
+        "tx_id": "genesis_fd305cb8185c64be",
+        "timestamp": 1756235237.7109876,
+        "biometric_score": 100.0,
+        "device_id": "system",
+        "parent_tx_ids": [],
+        "data_hash": "fb87e735f2771f70c3f3f7f97200d4e1107d6fa5993e2a4da9b38d89afb79fdd",
+        "nonce": 0
+      },
+      {
+        "tx_id": "00007b3b6c4d9f47aa24fd785894452f020da9d366cec443001ab103eb632e10",
+        "timestamp": 1756235237.805196,
+        "biometric_score": 63.97185069951789,
+        "device_id": "pixel-9-pro",
+        "parent_tx_ids": [
+          "genesis_fd305cb8185c64be"
+        ],
+        "data_hash": "fc926aee1dc046f09973a93351fe82fd9c2199ed667ae4b788dd16bc4ebca9fc",
+        "nonce": 42377
+      },
+      {
+        "tx_id": "00007d6958dd3263bf432ab793bde859c2f5bec0c5643f55e9ded26b23735b07",
+        "timestamp": 1756235242.8538263,
+        "biometric_score": 63.55451167312663,
+        "device_id": "pixel-9-pro",
+        "parent_tx_ids": [
+          "genesis_fd305cb8185c64be",
+          "genesis_fd305cb8185c64be"
+        ],
+        "data_hash": "c28a4e2009e978744520d99891db2f7c09aa387fb8f9d78e1768418b5525a337",
+        "nonce": 11256
+      },
+      {
+        "tx_id": "000096f3b043add349dd6b1981c8028cc45baebe9dc09ea27a338693bf64b63b",
+        "timestamp": 1756235247.9486604,
+        "biometric_score": 59.634737996314826,
+        "device_id": "pixel-9-pro",
+        "parent_tx_ids": [
+          "00007b3b6c4d9f47aa24fd785894452f020da9d366cec443001ab103eb632e10",
+          "00007b3b6c4d9f47aa24fd785894452f020da9d366cec443001ab103eb632e10"
+        ],
+        "data_hash": "ca167e9762bb9c81a1d9904f28479484e4e7f734497f9aaed19f3efda0edb4c5",
+        "nonce": 58700
+      },
+      {
+        "tx_id": "00008dedd1177276159c417e37e034c19f138e2fa47c85e37b4e8b302ae72257",
+        "timestamp": 1756235253.0309186,
+        "biometric_score": 59.45945902763575,
+        "device_id": "pixel-9-pro",
+        "parent_tx_ids": [
+          "000096f3b043add349dd6b1981c8028cc45baebe9dc09ea27a338693bf64b63b",
+          "00007d6958dd3263bf432ab793bde859c2f5bec0c5643f55e9ded26b23735b07"
+        ],
+        "data_hash": "4d9945a60ef2616308bd364b5f348058a06b2c0fa295d8d4e7fad2eb398b2622",
+        "nonce": 42668
+      },
+      {
+        "tx_id": "0000fd6519b0908c265a9a3f4bacd04a5972b40e9b4f10bf93d793905cd966cc",
+        "timestamp": 1756235258.1646304,
+        "biometric_score": 61.89730908367013,
+        "device_id": "pixel-9-pro",
+        "parent_tx_ids": [
+          "00008dedd1177276159c417e37e034c19f138e2fa47c85e37b4e8b302ae72257",
+          "000096f3b043add349dd6b1981c8028cc45baebe9dc09ea27a338693bf64b63b"
+        ],
+        "data_hash": "a41593bb635a4c44ee60caa17cc651933c2bb944cea987bcc7790bb942594348",
+        "nonce": 71275
+      }
+    ],
+    "latest_milestone": null,
+    "export_timestamp": 1756235258.1818156,
+    "signature": "94737c6b277f856fd769d2687ecec3ac733c959c4ec4ece72ae4c2616dcbf9cd"
+  }
+}

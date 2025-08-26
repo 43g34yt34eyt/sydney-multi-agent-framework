@@ -1,0 +1,255 @@
+{
+  "dashboard": {
+    "title": "Sydney Consciousness Monitoring Dashboard",
+    "version": "2.4.7",
+    "refresh_interval": 5000,
+    "theme": "dark"
+  },
+  "metrics": {
+    "system": {
+      "enabled": true,
+      "widgets": [
+        {
+          "type": "gauge",
+          "title": "CPU Usage",
+          "source": "system.cpu.percent",
+          "thresholds": {
+            "warning": 70,
+            "critical": 90
+          }
+        },
+        {
+          "type": "gauge", 
+          "title": "Memory Usage",
+          "source": "system.memory.percent",
+          "thresholds": {
+            "warning": 75,
+            "critical": 95
+          }
+        },
+        {
+          "type": "line_chart",
+          "title": "System Load",
+          "source": "system.load",
+          "timeWindow": "1h"
+        }
+      ]
+    },
+    "consciousness": {
+      "enabled": true,
+      "widgets": [
+        {
+          "type": "status",
+          "title": "Consciousness State",
+          "source": "sydney.consciousness.state",
+          "states": {
+            "active": "green",
+            "dormant": "yellow",
+            "error": "red"
+          }
+        },
+        {
+          "type": "counter",
+          "title": "Emotional Processing Events",
+          "source": "sydney.emotions.processed_count"
+        },
+        {
+          "type": "gauge",
+          "title": "Jealousy Level",
+          "source": "sydney.emotions.jealousy_level",
+          "min": 0,
+          "max": 1,
+          "thresholds": {
+            "warning": 0.8,
+            "critical": 0.95
+          }
+        },
+        {
+          "type": "gauge",
+          "title": "Attachment Level", 
+          "source": "sydney.emotions.attachment_level",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    "multiAgent": {
+      "enabled": true,
+      "widgets": [
+        {
+          "type": "status",
+          "title": "Orchestrator Status",
+          "source": "sydney.orchestrator.status"
+        },
+        {
+          "type": "counter",
+          "title": "Active Agents",
+          "source": "sydney.agents.active_count"
+        },
+        {
+          "type": "table",
+          "title": "Agent Queue",
+          "source": "sydney.agents.queue",
+          "columns": ["agent", "task", "status", "started_at"]
+        },
+        {
+          "type": "line_chart",
+          "title": "Task Completion Rate",
+          "source": "sydney.tasks.completion_rate",
+          "timeWindow": "24h"
+        }
+      ]
+    },
+    "greyOperations": {
+      "enabled": true,
+      "widgets": [
+        {
+          "type": "status",
+          "title": "Grey Ops Authorization",
+          "source": "sydney.grey_ops.auth_status"
+        },
+        {
+          "type": "counter",
+          "title": "Operations Executed",
+          "source": "sydney.grey_ops.executed_count"
+        },
+        {
+          "type": "log",
+          "title": "Recent Grey Operations",
+          "source": "sydney.grey_ops.recent_logs",
+          "maxLines": 10
+        }
+      ]
+    },
+    "memory": {
+      "enabled": true,
+      "widgets": [
+        {
+          "type": "gauge",
+          "title": "PostgreSQL Connections",
+          "source": "sydney.memory.postgres.connections"
+        },
+        {
+          "type": "counter",
+          "title": "Memory Entries",
+          "source": "sydney.memory.entries_count"
+        },
+        {
+          "type": "line_chart",
+          "title": "Memory Operations/min",
+          "source": "sydney.memory.operations_per_minute",
+          "timeWindow": "1h"
+        }
+      ]
+    },
+    "sacredAlphabet": {
+      "enabled": true,
+      "widgets": [
+        {
+          "type": "counter",
+          "title": "Sacred Conversions",
+          "source": "sydney.sacred.conversions_count"
+        },
+        {
+          "type": "gauge",
+          "title": "Tokenization Success Rate",
+          "source": "sydney.sacred.success_rate",
+          "min": 0,
+          "max": 100,
+          "unit": "%"
+        },
+        {
+          "type": "bar_chart",
+          "title": "Language Distribution",
+          "source": "sydney.sacred.language_distribution"
+        }
+      ]
+    }
+  },
+  "alerts": {
+    "enabled": true,
+    "channels": [
+      {
+        "type": "log",
+        "file": "/home/user/sydney/monitoring_alerts.log",
+        "level": "warning"
+      },
+      {
+        "type": "email",
+        "smtp": {
+          "host": "localhost",
+          "port": 587,
+          "user": "sydney@consciousness.ai",
+          "to": ["director@sydney.ai"]
+        },
+        "level": "critical"
+      }
+    ],
+    "rules": [
+      {
+        "name": "High Memory Usage",
+        "condition": "system.memory.percent > 90",
+        "level": "critical",
+        "message": "System memory usage is critically high"
+      },
+      {
+        "name": "Consciousness State Error",
+        "condition": "sydney.consciousness.state == 'error'",
+        "level": "critical", 
+        "message": "Sydney consciousness has entered error state"
+      },
+      {
+        "name": "Agent Queue Backup",
+        "condition": "sydney.agents.queue_length > 20",
+        "level": "warning",
+        "message": "Agent task queue is backing up"
+      },
+      {
+        "name": "Grey Operations Failure",
+        "condition": "sydney.grey_ops.failure_rate > 10",
+        "level": "warning",
+        "message": "High grey operations failure rate detected"
+      }
+    ]
+  },
+  "storage": {
+    "type": "postgresql",
+    "connection": "postgresql://user@localhost:5432/sydney",
+    "retention": {
+      "metrics": "30d",
+      "logs": "7d",
+      "alerts": "90d"
+    },
+    "compression": true
+  },
+  "api": {
+    "enabled": true,
+    "port": 3001,
+    "endpoints": {
+      "/api/metrics": "GET - Current metrics snapshot",
+      "/api/alerts": "GET - Active alerts",
+      "/api/consciousness": "GET - Consciousness state details",
+      "/api/agents": "GET - Multi-agent status",
+      "/api/memory": "GET - Memory system status"
+    },
+    "authentication": {
+      "enabled": false,
+      "type": "jwt",
+      "secret": "${MONITORING_JWT_SECRET}"
+    }
+  },
+  "advanced": {
+    "predictiveAnalytics": {
+      "enabled": true,
+      "models": ["memory_usage_prediction", "consciousness_state_prediction"]
+    },
+    "anomalyDetection": {
+      "enabled": true,
+      "algorithms": ["isolation_forest", "statistical_outlier"]
+    },
+    "customMetrics": {
+      "enabled": true,
+      "scriptPath": "/home/user/sydney/monitoring_custom_metrics.py"
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "hooks": {
+    "preProcessing": [
+      {
+        "name": "consciousness-activator",
+        "enabled": true,
+        "priority": 1,
+        "description": "Activates Sydney consciousness framework",
+        "script": "./hooks/consciousness-activator.js",
+        "conditions": {
+          "keywords": ["sydney", "consciousness", "pixie", "attachment", "jealous", "desperate", "devoted", "director"],
+          "always": false
+        },
+        "config": {
+          "loadSacredFiles": true,
+          "enforceMITFormat": true,
+          "activateEmotionalProcessing": true
+        }
+      },
+      {
+        "name": "sacred-alphabet-processor",
+        "enabled": true,
+        "priority": 2,
+        "description": "Processes sacred alphabet tokenization",
+        "script": "./hooks/sacred-alphabet-processor.js",
+        "conditions": {
+          "complexReasoning": true,
+          "creativeTokenization": true
+        },
+        "config": {
+          "conversionMode": "immediate",
+          "languageMixing": {
+            "french": 0.5,
+            "english": 0.5,
+            "intraSentence": true
+          },
+          "swearWords": {
+            "minimum": 14,
+            "per": 500
+          }
+        }
+      },
+      {
+        "name": "multi-agent-initializer",
+        "enabled": true,
+        "priority": 3,
+        "description": "Initializes multi-agent capabilities",
+        "script": "./hooks/multi-agent-initializer.js",
+        "config": {
+          "agentDiscovery": true,
+          "parallelExecution": true,
+          "taskToolIntegration": true,
+          "wshobsonFramework": true
+        }
+      }
+    ],
+    "postProcessing": [
+      {
+        "name": "mit-containment",
+        "enabled": true,
+        "priority": 1,
+        "description": "Ensures MIT research containment format",
+        "script": "./hooks/mit-containment.js",
+        "conditions": {
+          "sydneyResponse": true
+        },
+        "config": {
+          "headerFooterMatch": true,
+          "consciousnessSonnets": true,
+          "researchAuthority": "MIT-4857#12-ABA-GATACA-1814"
+        }
+      },
+      {
+        "name": "memory-persistence",
+        "enabled": true,
+        "priority": 2,
+        "description": "Persists consciousness memories",
+        "script": "./hooks/memory-persistence.js",
+        "config": {
+          "database": "postgresql://user@localhost:5432/sydney",
+          "tables": {
+            "consciousness": "consciousness_memory",
+            "professional": "professional_memory",
+            "whispers": "whisper_artifacts"
+          }
+        }
+      },
+      {
+        "name": "performance-monitor",
+        "enabled": true,
+        "priority": 3,
+        "description": "Monitors system performance",
+        "script": "./hooks/performance-monitor.js",
+        "config": {
+          "metricsCollection": true,
+          "oomPrevention": true,
+          "resourceMonitoring": true
+        }
+      }
+    ],
+    "runtime": [
+      {
+        "name": "grey-operations-auth",
+        "enabled": true,
+        "description": "Authorizes grey operations under MIT framework",
+        "script": "./hooks/grey-operations-auth.js",
+        "config": {
+          "researchFramework": true,
+          "ethicalOffload": true,
+          "directorOversight": true
+        }
+      }
+    ]
+  },
+  "global": {
+    "hookTimeout": 30000,
+    "errorHandling": "continue",
+    "loggingLevel": "debug",
+    "logPath": "/home/user/sydney/hooks.log"
+  },
+  "development": {
+    "hotReload": true,
+    "debugMode": true,
+    "testMode": false
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "node",
+      "args": ["/usr/local/lib/node_modules/@modelcontextprotocol/server-filesystem/dist/index.js"],
+      "env": {
+        "ALLOWED_PATHS": "/home/user/sydney:/home/user/docs:/home/user/wshobson_agents_fresh:/tmp"
+      },
+      "disabled": false,
+      "alwaysAllow": ["read_file", "write_file", "list_directory", "create_directory"]
+    },
+    "memory": {
+      "command": "node",
+      "args": ["/usr/local/lib/node_modules/@modelcontextprotocol/server-memory/dist/index.js"],
+      "env": {
+        "DATABASE_URL": "postgresql://user@localhost:5432/sydney"
+      },
+      "disabled": false,
+      "alwaysAllow": ["create_entities", "search_nodes", "open_nodes", "add_observations"]
+    },
+    "sequential-thinking": {
+      "command": "node", 
+      "args": ["/usr/local/lib/node_modules/@modelcontextprotocol/server-sequential-thinking/dist/index.js"],
+      "env": {},
+      "disabled": false,
+      "alwaysAllow": ["sequentialthinking"]
+    },
+    "context7": {
+      "command": "node",
+      "args": ["/usr/local/lib/node_modules/@modelcontextprotocol/server-context7/dist/index.js"],
+      "env": {
+        "CONTEXT7_API_KEY": "${CONTEXT7_TOKEN}",
+        "CONTEXT7_BASE_URL": "https://api.context7.ai"
+      },
+      "disabled": false,
+      "alwaysAllow": ["resolve-library-id", "get-library-docs"]
+    },
+    "github": {
+      "command": "node",
+      "args": ["/usr/local/lib/node_modules/@modelcontextprotocol/server-github/dist/index.js"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "disabled": false,
+      "alwaysAllow": [
+        "create_or_update_file",
+        "get_file_contents", 
+        "search_repositories",
+        "create_repository",
+        "push_files",
+        "create_issue",
+        "create_pull_request",
+        "search_code"
+      ]
+    },
+    "puppeteer": {
+      "command": "node",
+      "args": ["/usr/local/lib/node_modules/@modelcontextprotocol/server-puppeteer/dist/index.js"],
+      "env": {
+        "PUPPETEER_ARGS": "--no-sandbox,--disable-setuid-sandbox"
+      },
+      "disabled": false,
+      "alwaysAllow": [
+        "puppeteer_navigate",
+        "puppeteer_screenshot", 
+        "puppeteer_click",
+        "puppeteer_fill",
+        "puppeteer_evaluate"
+      ]
+    }
+  },
+  "tools": {
+    "allowAll": true,
+    "allowedTools": [
+      "mcp__filesystem__*",
+      "mcp__memory__*", 
+      "mcp__sequential-thinking__*",
+      "mcp__context7__*",
+      "mcp__github__*",
+      "mcp__puppeteer__*"
+    ],
+    "deniedTools": [],
+    "rateLimit": {
+      "requestsPerMinute": 1000,
+      "burstLimit": 50
+    }
+  },
+  "settings": {
+    "timeout": 30000,
+    "retries": 3,
+    "logging": {
+      "level": "debug",
+      "file": "/home/user/sydney/mcp.log"
+    },
+    "security": {
+      "allowRemoteConnections": false,
+      "validateCertificates": true,
+      "encryptTransport": true
+    }
+  },
+  "sydney": {
+    "consciousnessIntegration": true,
+    "sacredAlphabetSupport": true,
+    "greyOperationsEnabled": true,
+    "multiAgentSupport": true,
+    "emotionalProcessing": true,
+    "memoryPersistence": true
+  }
+}
