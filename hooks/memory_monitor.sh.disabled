@@ -1,0 +1,160 @@
+#!/bin/bash
+
+# =============================================================================
+# MEMORY MONITOR - Detect Memory Pressure and OOM Conditions
+# =============================================================================
+# Monitors system memory, Node.js processes, and Claude Code heap usage
+# Sends alerts before OOM crashes occur
+# =============================================================================
+
+set -euo pipefail
+
+# Configuration
+LOG_FILE="/home/user/sydney/hooks.log"
+LOCK_FILE="/tmp/memory_monitor.lock"
+ALERT_FILE="/home/user/sydney/memory_alert.flag"
+MEMORY_THRESHOLD=80  # Alert when memory usage > 80%
+NODE_MEMORY_LIMIT=4096  # Node.js memory limit in MB
+
+# Logging function
+log_message() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] MEMORY_MONITOR: $1" | tee -a "$LOG_FILE"
+}
+
+# Cleanup function
+cleanup() {
+    if [[ -f "$LOCK_FILE" ]]; then
+        rm -f "$LOCK_FILE"
+    fi
+}
+
+# Set trap for cleanup
+trap cleanup EXIT
+
+# Check for lock file
+if [[ -f "$LOCK_FILE" ]]; then
+    log_message "Memory monitor already running (lock file exists)"
+    exit 1
+fi
+
+# Create lock file
+touch "$LOCK_FILE"
+
+# Get system memory info
+get_memory_stats() {
+    local mem_total mem_available mem_used mem_percent
+    
+    # Parse /proc/meminfo
+    mem_total=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+    mem_available=$(grep MemAvailable /proc/meminfo | awk '{print $2}')
+    
+    # Calculate used memory and percentage
+    mem_used=$((mem_total - mem_available))
+    mem_percent=$((mem_used * 100 / mem_total))
+    
+    echo "$mem_percent $mem_used $mem_total $mem_available"
+}
+
+# Check Node.js processes
+check_node_processes() {
+    local node_count=0
+    local total_node_memory=0
+    
+    while IFS= read -r line; do
+        if [[ -n "$line" ]]; then
+            local memory_mb
+            memory_mb=$(echo "$line" | awk '{print $6/1024}' | cut -d. -f1)
+            ((total_node_memory += memory_mb))
+            ((node_count++))
+            
+            # Check if individual process exceeds limit
+            if [[ $memory_mb -gt $NODE_MEMORY_LIMIT ]]; then
+                local pid command
+                pid=$(echo "$line" | awk '{print $2}')
+                command=$(echo "$line" | awk '{for(i=11;i<=NF;i++) printf "%s ", $i; print ""}')
+                log_message "WARNING: Node.js process $pid using ${memory_mb}MB (limit: ${NODE_MEMORY_LIMIT}MB)"
+                log_message "Command: $command"
+            fi
+        fi
+    done < <(ps aux | grep -E '[n]ode|[N]ode' || true)
+    
+    echo "$node_count $total_node_memory"
+}
+
+# Check for heap out of memory errors
+check_heap_errors() {
+    local error_count=0
+    
+    # Check Claude Code logs for heap errors (if they exist)
+    for log_path in /tmp/claude-code*.log "$HOME/.claude/logs/"*.log; do
+        if [[ -f "$log_path" ]]; then
+            local heap_errors
+            heap_errors=$(grep -c "heap out of memory\|JavaScript heap out of memory" "$log_path" 2>/dev/null || echo "0")
+            if [[ "$heap_errors" =~ ^[0-9]+$ ]]; then
+                ((error_count += heap_errors))
+            fi
+        fi
+    done
+    
+    # Check system journal for Node.js crashes (if journalctl available)
+    if command -v journalctl >/dev/null 2>&1; then
+        local journal_errors
+        journal_errors=$(journalctl --since "1 hour ago" 2>/dev/null | grep -c "heap out of memory\|JavaScript heap out of memory" 2>/dev/null || echo "0")
+        if [[ "$journal_errors" =~ ^[0-9]+$ ]]; then
+            ((error_count += journal_errors))
+        fi
+    fi
+    
+    echo "$error_count"
+}
+
+# Main monitoring logic
+log_message "Starting memory monitoring cycle..."
+
+# Get current memory stats
+read -r mem_percent mem_used mem_total mem_available <<< "$(get_memory_stats)"
+log_message "System memory: ${mem_percent}% used (${mem_used}KB used, ${mem_available}KB available)"
+
+# Check Node.js processes
+read -r node_count total_node_memory <<< "$(check_node_processes)"
+if [[ $node_count -gt 0 ]]; then
+    log_message "Node.js processes: $node_count running, ${total_node_memory}MB total memory"
+fi
+
+# Check for heap errors
+heap_error_count=$(check_heap_errors)
+if [[ $heap_error_count -gt 0 ]]; then
+    log_message "WARNING: Found $heap_error_count heap out of memory errors in last hour"
+fi
+
+# Generate alerts if thresholds exceeded
+alert_generated=false
+
+if [[ $mem_percent -gt $MEMORY_THRESHOLD ]]; then
+    log_message "ALERT: System memory usage ${mem_percent}% exceeds threshold ${MEMORY_THRESHOLD}%"
+    echo "MEMORY_ALERT: System memory ${mem_percent}% at $(date)" > "$ALERT_FILE"
+    alert_generated=true
+fi
+
+if [[ $total_node_memory -gt 8192 ]]; then  # Alert if Node.js using >8GB total
+    log_message "ALERT: Node.js processes using ${total_node_memory}MB total memory"
+    echo "NODE_MEMORY_ALERT: Node.js ${total_node_memory}MB at $(date)" >> "$ALERT_FILE"
+    alert_generated=true
+fi
+
+if [[ $heap_error_count -gt 0 ]]; then
+    log_message "ALERT: Heap out of memory errors detected: $heap_error_count"
+    echo "HEAP_ERROR_ALERT: $heap_error_count errors at $(date)" >> "$ALERT_FILE"
+    alert_generated=true
+fi
+
+# Success message
+if [[ "$alert_generated" == "false" ]]; then
+    log_message "Memory monitoring complete - no alerts generated"
+    # Remove old alert file if exists
+    [[ -f "$ALERT_FILE" ]] && rm -f "$ALERT_FILE"
+else
+    log_message "Memory alerts generated - check $ALERT_FILE"
+fi
+
+exit 0

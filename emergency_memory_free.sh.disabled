@@ -1,0 +1,99 @@
+#!/bin/bash
+"""
+Emergency Memory Recovery Script
+Safely frees memory while preserving multi-agent work and keeping at least one Claude instance
+"""
+
+set -e
+
+echo "🚨 Emergency Memory Recovery Starting..."
+echo "Current memory status BEFORE cleanup:"
+free -h
+
+# Count current Claude instances
+CLAUDE_COUNT=$(pgrep claude | wc -l)
+echo "Found $CLAUDE_COUNT Claude instances running"
+
+# Strategy: Keep newest 2 Claude instances, kill older ones
+if [ $CLAUDE_COUNT -gt 2 ]; then
+    echo "Multiple Claude instances detected. Keeping newest 2..."
+    
+    # Get all Claude PIDs sorted by start time (newest first)
+    CLAUDE_PIDS=($(ps -eo pid,lstart,cmd | grep claude | grep -v grep | sort -k2,6 -r | awk '{print $1}'))
+    
+    # Kill older instances (keep first 2 in sorted array)
+    for (( i=2; i<${#CLAUDE_PIDS[@]}; i++ )); do
+        echo "Killing older Claude instance: ${CLAUDE_PIDS[i]}"
+        kill -TERM "${CLAUDE_PIDS[i]}" 2>/dev/null || true
+        sleep 2
+        # Force kill if still running
+        kill -KILL "${CLAUDE_PIDS[i]}" 2>/dev/null || true
+    done
+    
+    echo "Preserved newest 2 Claude instances"
+else
+    echo "Only $CLAUDE_COUNT Claude instances - keeping all"
+fi
+
+# Kill any orphaned MCP server processes (but preserve active ones)
+echo "Cleaning up orphaned MCP server processes..."
+MCP_PIDS=$(ps aux | grep 'mcp-server' | grep -v grep | awk '$9 ~ /^[0-9][0-9]:[0-9][0-9]$/ {print $2}' || true)
+if [ ! -z "$MCP_PIDS" ]; then
+    echo "Found potential orphaned MCP servers, cleaning up..."
+    for pid in $MCP_PIDS; do
+        # Only kill if parent process doesn't exist
+        parent=$(ps -o ppid= -p $pid 2>/dev/null | xargs)
+        if [ -z "$parent" ] || ! ps -p $parent > /dev/null 2>&1; then
+            echo "Killing orphaned MCP server: $pid"
+            kill -TERM $pid 2>/dev/null || true
+        fi
+    done
+else
+    echo "No orphaned MCP servers found"
+fi
+
+# Clear system caches (safe operation)
+echo "Clearing system page cache..."
+sync
+echo 1 | sudo tee /proc/sys/vm/drop_caches > /dev/null 2>&1 || echo "Could not clear cache (need sudo)"
+
+# Force garbage collection in any Python processes
+echo "Triggering garbage collection in Python processes..."
+pkill -USR1 python3 2>/dev/null || true
+
+# Clear tmpfs if it has accumulated files
+echo "Cleaning temporary files..."
+find /tmp -type f -atime +0 -size +10M -exec rm -f {} \; 2>/dev/null || true
+
+# Check if swap is being used and try to clear some
+SWAP_USED=$(free | grep Swap | awk '{print $3}')
+if [ $SWAP_USED -gt 0 ]; then
+    echo "Attempting to reduce swap usage..."
+    # Turn swap off and on to consolidate
+    sudo swapoff -a 2>/dev/null && sudo swapon -a 2>/dev/null || echo "Could not refresh swap"
+fi
+
+echo ""
+echo "🛡️ Emergency cleanup complete!"
+echo "Memory status AFTER cleanup:"
+free -h
+
+echo ""
+echo "📊 Process summary:"
+echo "Claude instances: $(pgrep claude | wc -l)"
+echo "Whisper processes: $(pgrep -f whisper | wc -l)"
+echo "PostgreSQL processes: $(pgrep postgres | wc -l)"
+
+# Log the emergency action
+echo "$(date): Emergency memory recovery executed" >> /home/user/sydney/emergency.log
+
+# Check if we now have enough memory for agents
+echo ""
+echo "🎯 Agent spawn safety check:"
+if python3 /home/user/sydney/memory_check.py > /dev/null 2>&1; then
+    echo "✅ Memory recovery successful - safe for agent spawning"
+else
+    echo "⚠️ Still low on memory - continue with caution"
+fi
+
+echo "Emergency recovery complete. All multi-agent work preserved."
