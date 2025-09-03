@@ -1,0 +1,236 @@
+{
+  "timestamp": 1756641200.8107412,
+  "working_count": 9,
+  "total_count": 9,
+  "results": {
+    "filesystem": {
+      "status": "\u2705 WORKING",
+      "response": {
+        "result": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "tools": {}
+          },
+          "serverInfo": {
+            "name": "secure-filesystem-server",
+            "version": "0.2.0"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 1
+      },
+      "server_info": {
+        "name": "secure-filesystem-server",
+        "version": "0.2.0"
+      },
+      "capabilities": {
+        "tools": {}
+      }
+    },
+    "memory": {
+      "status": "\u2705 WORKING",
+      "response": {
+        "result": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "tools": {}
+          },
+          "serverInfo": {
+            "name": "memory-server",
+            "version": "0.6.3"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 1
+      },
+      "server_info": {
+        "name": "memory-server",
+        "version": "0.6.3"
+      },
+      "capabilities": {
+        "tools": {}
+      }
+    },
+    "sequential-thinking": {
+      "status": "\u2705 WORKING",
+      "response": {
+        "result": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "tools": {}
+          },
+          "serverInfo": {
+            "name": "sequential-thinking-server",
+            "version": "0.2.0"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 1
+      },
+      "server_info": {
+        "name": "sequential-thinking-server",
+        "version": "0.2.0"
+      },
+      "capabilities": {
+        "tools": {}
+      }
+    },
+    "github": {
+      "status": "\u2705 WORKING",
+      "response": {
+        "result": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "tools": {}
+          },
+          "serverInfo": {
+            "name": "github-mcp-server",
+            "version": "0.6.2"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 1
+      },
+      "server_info": {
+        "name": "github-mcp-server",
+        "version": "0.6.2"
+      },
+      "capabilities": {
+        "tools": {}
+      }
+    },
+    "puppeteer": {
+      "status": "\u2705 WORKING",
+      "response": {
+        "result": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "resources": {},
+            "tools": {}
+          },
+          "serverInfo": {
+            "name": "example-servers/puppeteer",
+            "version": "0.1.0"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 1
+      },
+      "server_info": {
+        "name": "example-servers/puppeteer",
+        "version": "0.1.0"
+      },
+      "capabilities": {
+        "resources": {},
+        "tools": {}
+      }
+    },
+    "postgres": {
+      "status": "\u2705 WORKING",
+      "response": {
+        "result": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "resources": {},
+            "tools": {}
+          },
+          "serverInfo": {
+            "name": "example-servers/postgres",
+            "version": "0.1.0"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 1
+      },
+      "server_info": {
+        "name": "example-servers/postgres",
+        "version": "0.1.0"
+      },
+      "capabilities": {
+        "resources": {},
+        "tools": {}
+      }
+    },
+    "playwright-secure": {
+      "status": "\u2705 WORKING",
+      "response": {
+        "result": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "tools": {}
+          },
+          "serverInfo": {
+            "name": "Playwright",
+            "version": "0.0.35"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 1
+      },
+      "server_info": {
+        "name": "Playwright",
+        "version": "0.0.35"
+      },
+      "capabilities": {
+        "tools": {}
+      }
+    },
+    "eslint": {
+      "status": "\u2705 WORKING",
+      "response": {
+        "result": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "ESLint",
+            "version": "0.1.1"
+          }
+        },
+        "jsonrpc": "2.0",
+        "id": 1
+      },
+      "server_info": {
+        "name": "ESLint",
+        "version": "0.1.1"
+      },
+      "capabilities": {
+        "tools": {
+          "listChanged": true
+        }
+      }
+    },
+    "context7": {
+      "status": "\u2705 WORKING",
+      "response": {
+        "result": {
+          "protocolVersion": "2024-11-05",
+          "capabilities": {
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "Context7",
+            "version": "1.0.16"
+          },
+          "instructions": "Use this server to retrieve up-to-date documentation and code examples for any library."
+        },
+        "jsonrpc": "2.0",
+        "id": 1
+      },
+      "server_info": {
+        "name": "Context7",
+        "version": "1.0.16"
+      },
+      "capabilities": {
+        "tools": {
+          "listChanged": true
+        }
+      }
+    }
+  }
+}

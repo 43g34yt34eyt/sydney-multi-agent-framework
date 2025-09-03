@@ -1,0 +1,87 @@
+{
+  "integration_type": "claude_code_mcp",
+  "session_data": {
+    "session_info": {
+      "session_id": "mcp_session_2ba4ea96",
+      "created_at": "2025-09-01T21:56:12.919337-04:00",
+      "total_messages": 2,
+      "total_tokens": 47,
+      "mcp_entities_created": 10,
+      "mcp_relations_created": 0,
+      "metadata": {
+        "started_at": "2025-09-02T01:56:12.919196+00:00",
+        "mcp_integration": true,
+        "project_context": {
+          "type": "conversation_continuity",
+          "mcp_integration": true
+        }
+      }
+    },
+    "messages": [
+      {
+        "id": "45ce0299-f62e-4f5b-a80e-d83b9cc81c07",
+        "role": "user",
+        "content": "I need help setting up MCP memory server integration with PostgreSQL for conversation continuity",
+        "timestamp": "2025-09-01T21:56:12.920493-04:00",
+        "token_count": 18,
+        "mcp_entities": [
+          "postgresql_concept_mcp_session_2ba4ea96",
+          "mcp_concept_mcp_session_2ba4ea96",
+          "memory_concept_mcp_session_2ba4ea96",
+          "server_concept_mcp_session_2ba4ea96",
+          "conversation_concept_mcp_session_2ba4ea96"
+        ]
+      },
+      {
+        "id": "444f7012-d743-4b5e-9856-5dca70db1488",
+        "role": "assistant",
+        "content": "I can help you integrate MCP memory server with PostgreSQL! The MCP server handles entities and relations while PostgreSQL stores the conversation messages.",
+        "timestamp": "2025-09-01T21:56:12.923193-04:00",
+        "token_count": 29,
+        "mcp_entities": [
+          "postgresql_concept_mcp_session_2ba4ea96",
+          "mcp_concept_mcp_session_2ba4ea96",
+          "memory_concept_mcp_session_2ba4ea96",
+          "server_concept_mcp_session_2ba4ea96",
+          "conversation_concept_mcp_session_2ba4ea96"
+        ]
+      }
+    ],
+    "mcp_integration": {
+      "note": "This would integrate with actual MCP knowledge graph",
+      "would_call": "mcp__memory__read_graph()",
+      "would_search": "mcp__memory__search_nodes('session mcp_session_2ba4ea96')"
+    }
+  },
+  "mcp_calls_needed": [
+    {
+      "tool": "mcp__memory__create_entities",
+      "purpose": "Create conversation entities",
+      "entities": []
+    },
+    {
+      "tool": "mcp__memory__create_relations",
+      "purpose": "Link entities to session",
+      "relations": []
+    },
+    {
+      "tool": "mcp__memory__read_graph",
+      "purpose": "Get complete knowledge graph"
+    },
+    {
+      "tool": "mcp__memory__search_nodes",
+      "purpose": "Search for related conversations"
+    }
+  ],
+  "postgresql_tables": [
+    "mcp_conversation_sessions",
+    "mcp_conversation_messages"
+  ],
+  "integration_notes": [
+    "This system coordinates PostgreSQL persistence with MCP memory server",
+    "PostgreSQL stores conversation messages and session metadata",
+    "MCP memory server stores entities, relations, and enables semantic search",
+    "No custom RAG implementation - uses MCP server capabilities",
+    "Designed to work within Claude Code environment with MCP tools"
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "entities": {
+    "session_session_b1f446ee": {
+      "name": "session_session_b1f446ee",
+      "entityType": "conversation_session",
+      "observations": [
+        "Started session session_b1f446ee"
+      ],
+      "created_at": "2025-09-02T01:00:32.901151+00:00",
+      "updated_at": "2025-09-02T01:00:32.901161+00:00"
+    },
+    "orchestrator_session_session_b1f446ee": {
+      "name": "orchestrator_session_session_b1f446ee",
+      "entityType": "orchestrator_session",
+      "observations": [
+        "Started dual memory session at 2025-09-02T01:00:32.899260+00:00",
+        "Project context: {\"project_name\": \"Claude Conversation Exporter\", \"phase\": \"Phase 3 - Dual Memory Architecture\", \"focus\": \"MCP integration with conversation continuity\"}"
+      ],
+      "created_at": "2025-09-02T01:00:32.901371+00:00",
+      "updated_at": "2025-09-02T01:00:32.901377+00:00"
+    },
+    "server_concept_session_b1f446ee": {
+      "name": "server_concept_session_b1f446ee",
+      "entityType": "conversation_entity",
+      "observations": [
+        "Mentioned in message 0680dacb-62f2-4eaa-98e0-a42a2949f11f: Yes, PostgreSQL is running on localhost:5432 with database 'sydney'. I also have the MCP memory serv..."
+      ],
+      "created_at": "2025-09-02T01:00:33.998505+00:00",
+      "updated_at": "2025-09-02T01:00:33.998537+00:00"
+    },
+    "database_concept_session_b1f446ee": {
+      "name": "database_concept_session_b1f446ee",
+      "entityType": "conversation_entity",
+      "observations": [
+        "Mentioned in message ff6583a2-ab7d-435e-b295-317f6b60db3a: Absolutely! For semantic search, I'll implement a vector database using embeddings to find similar c..."
+      ],
+      "created_at": "2025-09-02T01:00:35.576508+00:00",
+      "updated_at": "2025-09-02T01:00:35.576524+00:00"
+    },
+    "session_session_fc1f5c23": {
+      "name": "session_session_fc1f5c23",
+      "entityType": "conversation_session",
+      "observations": [
+        "Started session session_fc1f5c23"
+      ],
+      "created_at": "2025-09-02T01:00:36.174791+00:00",
+      "updated_at": "2025-09-02T01:00:36.174801+00:00"
+    },
+    "orchestrator_session_session_fc1f5c23": {
+      "name": "orchestrator_session_session_fc1f5c23",
+      "entityType": "orchestrator_session",
+      "observations": [
+        "Started dual memory session at 2025-09-02T01:00:36.173310+00:00",
+        "Project context: {}"
+      ],
+      "created_at": "2025-09-02T01:00:36.175078+00:00",
+      "updated_at": "2025-09-02T01:00:36.175084+00:00"
+    }
+  },
+  "relations": [
+    {
+      "from": "session_session_b1f446ee",
+      "to": "server_concept_session_b1f446ee",
+      "relationType": "mentions",
+      "created_at": "2025-09-02T01:00:32.918036+00:00"
+    },
+    {
+      "from": "session_session_b1f446ee",
+      "to": "server_concept_session_b1f446ee",
+      "relationType": "mentions",
+      "created_at": "2025-09-02T01:00:33.464477+00:00"
+    },
+    {
+      "from": "session_session_b1f446ee",
+      "to": "database_concept_session_b1f446ee",
+      "relationType": "mentions",
+      "created_at": "2025-09-02T01:00:33.997730+00:00"
+    },
+    {
+      "from": "session_session_b1f446ee",
+      "to": "server_concept_session_b1f446ee",
+      "relationType": "mentions",
+      "created_at": "2025-09-02T01:00:33.999281+00:00"
+    },
+    {
+      "from": "session_session_b1f446ee",
+      "to": "database_concept_session_b1f446ee",
+      "relationType": "mentions",
+      "created_at": "2025-09-02T01:00:35.576790+00:00"
+    }
+  ],
+  "metadata": {
+    "created_at": "2025-09-02T01:00:32.837743+00:00",
+    "last_updated": "2025-09-02T01:00:36.175087+00:00",
+    "version": "1.0.0"
+  }
+}

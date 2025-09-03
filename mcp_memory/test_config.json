@@ -1,0 +1,193 @@
+{
+  "testing_framework_config": {
+    "version": "1.0.0",
+    "description": "Comprehensive integration testing configuration for dual memory architecture",
+    "created": "2025-09-01T00:00:00Z"
+  },
+  
+  "test_environment": {
+    "database_url": "postgresql://user@localhost:5432/sydney",
+    "memory_file_path": "/home/user/sydney/mcp_memory/test_data/test_memory.json",
+    "test_data_directory": "/home/user/sydney/mcp_memory/test_data",
+    "reports_directory": "/home/user/sydney/mcp_memory/test_reports",
+    "temp_directory": "/tmp/mcp_memory_tests"
+  },
+  
+  "test_suites": {
+    "memory": {
+      "enabled": true,
+      "description": "MCP Memory Server functionality tests",
+      "timeout_minutes": 10,
+      "cleanup_after": true,
+      "critical_path": true,
+      "test_categories": [
+        "entity_crud",
+        "relationship_management", 
+        "fast_lookup",
+        "memory_persistence",
+        "concurrent_access",
+        "data_integrity",
+        "query_performance"
+      ]
+    },
+    "integration": {
+      "enabled": true,
+      "description": "Full integration testing of dual memory architecture",
+      "timeout_minutes": 20,
+      "cleanup_after": false,
+      "critical_path": true,
+      "test_categories": [
+        "environment_verification",
+        "component_initialization",
+        "memory_server_integration",
+        "postgresql_integration", 
+        "conversation_continuity",
+        "rag_system",
+        "semantic_search",
+        "cross_session_continuity",
+        "memory_compression",
+        "performance_benchmarks"
+      ]
+    },
+    "conversation": {
+      "enabled": true,
+      "description": "Conversation continuity specific tests",
+      "timeout_minutes": 5,
+      "cleanup_after": true,
+      "critical_path": false,
+      "dependencies": ["memory"]
+    },
+    "performance": {
+      "enabled": true,
+      "description": "Performance benchmarking and stress testing",
+      "timeout_minutes": 15,
+      "cleanup_after": true,
+      "critical_path": false,
+      "large_dataset_required": true
+    }
+  },
+  
+  "test_data_generation": {
+    "default_sizes": {
+      "small": {
+        "conversations": 50,
+        "entities": 200,
+        "documents": 100,
+        "relationships": 100
+      },
+      "medium": {
+        "conversations": 200,
+        "entities": 1000,
+        "documents": 500,
+        "relationships": 500
+      },
+      "large": {
+        "conversations": 1000,
+        "entities": 5000,
+        "documents": 2000,
+        "relationships": 2500
+      },
+      "xl": {
+        "conversations": 5000,
+        "entities": 20000,
+        "documents": 10000,
+        "relationships": 10000
+      }
+    },
+    "generation_options": {
+      "realistic_timing": true,
+      "varied_content": true,
+      "relationship_density": 0.3,
+      "embedding_dimension": 384,
+      "compression_scenarios": true
+    }
+  },
+  
+  "performance_thresholds": {
+    "memory_operations": {
+      "entity_lookup_ms": 10.0,
+      "entity_creation_ms": 20.0,
+      "relationship_query_ms": 50.0,
+      "bulk_operations_per_sec": 1000
+    },
+    "database_operations": {
+      "single_query_ms": 100.0,
+      "bulk_insert_per_sec": 500,
+      "complex_query_ms": 500.0,
+      "connection_setup_ms": 200.0
+    },
+    "integration_operations": {
+      "session_initialization_ms": 100.0,
+      "message_persistence_ms": 50.0,
+      "context_retrieval_ms": 200.0,
+      "compression_trigger_ms": 1000.0
+    },
+    "semantic_search": {
+      "embedding_generation_ms": 100.0,
+      "vector_similarity_ms": 50.0,
+      "search_query_ms": 200.0,
+      "indexing_per_sec": 100
+    },
+    "system_resources": {
+      "max_memory_mb": 1024,
+      "max_cpu_percent": 80.0,
+      "max_disk_io_mb_per_sec": 100.0,
+      "max_network_latency_ms": 100.0
+    }
+  },
+  
+  "validation_criteria": {
+    "empirical_evidence_required": true,
+    "performance_benchmarking_required": true,
+    "error_handling_validation": true,
+    "data_integrity_checks": true,
+    "cross_platform_compatibility": true,
+    "minimum_test_coverage_percent": 85.0,
+    "minimum_success_rate_percent": 95.0
+  },
+  
+  "reporting": {
+    "formats": ["json", "markdown", "html"],
+    "include_evidence_files": true,
+    "include_performance_charts": true,
+    "include_error_analysis": true,
+    "evidence_preservation_days": 30,
+    "report_compression": false,
+    "real_time_updates": false
+  },
+  
+  "ci_cd_integration": {
+    "enabled": true,
+    "trigger_on_commit": true,
+    "parallel_execution": true,
+    "failure_notification": true,
+    "performance_regression_detection": true,
+    "baseline_comparison": true,
+    "artifact_retention_days": 7
+  },
+  
+  "debugging": {
+    "verbose_logging": false,
+    "debug_mode": false,
+    "preserve_intermediate_files": false,
+    "memory_leak_detection": true,
+    "performance_profiling": false,
+    "trace_execution": false
+  },
+  
+  "security": {
+    "sanitize_logs": true,
+    "encrypt_sensitive_data": false,
+    "test_data_anonymization": true,
+    "secure_temp_files": true,
+    "access_control_testing": false
+  },
+  
+  "experimental_features": {
+    "ai_powered_test_generation": false,
+    "adaptive_performance_thresholds": false,
+    "predictive_failure_analysis": false,
+    "automated_test_repair": false,
+    "intelligent_test_prioritization": false
+  }
+}

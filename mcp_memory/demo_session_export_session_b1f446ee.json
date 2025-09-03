@@ -1,0 +1,298 @@
+{
+  "session_info": {
+    "session_id": "session_b1f446ee",
+    "created_at": "2025-09-01T21:00:32.899500-04:00",
+    "last_updated": "2025-09-01T21:00:35.569546-04:00",
+    "total_messages": 6,
+    "total_tokens": 286,
+    "status": "active"
+  },
+  "current_conversation": {
+    "messages": [
+      {
+        "id": "26c29ab1-ec12-4ca9-8752-a36e2b8851c9",
+        "role": "user",
+        "content": "I need help implementing conversation continuity with MCP memory server integration. We want both fast entity lookup and persistent PostgreSQL storage.",
+        "timestamp": "2025-09-01T21:00:32.908447-04:00",
+        "token_count": 27
+      },
+      {
+        "id": "46dbf443-9f79-432e-912f-2f45de77e5db",
+        "role": "assistant",
+        "content": "I can help you build a dual memory architecture! We'll use MCP memory server for fast entity/relationship storage and PostgreSQL for persistent conversation data. This creates both immediate access and long-term continuity. Let me start by understanding your current setup - do you have PostgreSQL configured?",
+        "timestamp": "2025-09-01T21:00:33.442016-04:00",
+        "token_count": 59
+      },
+      {
+        "id": "0680dacb-62f2-4eaa-98e0-a42a2949f11f",
+        "role": "user",
+        "content": "Yes, PostgreSQL is running on localhost:5432 with database 'sydney'. I also have the MCP memory server installed. What's the best way to coordinate between these two systems?",
+        "timestamp": "2025-09-01T21:00:33.976257-04:00",
+        "token_count": 35
+      },
+      {
+        "id": "b1e07723-c646-448c-a375-86d8ffb64ae3",
+        "role": "assistant",
+        "content": "Perfect! The coordination strategy involves: 1) Use MCP memory for fast entity/relationship operations during conversation, 2) Use PostgreSQL for persistent message storage with session management, 3) Implement a RAG system for semantic search across conversation history, 4) Create an orchestrator that manages token banking with 30% reservation strategy. This gives you both speed and persistence.",
+        "timestamp": "2025-09-01T21:00:34.512785-04:00",
+        "token_count": 71
+      },
+      {
+        "id": "95c22af7-42a7-49da-8a85-aef1a3418add",
+        "role": "user",
+        "content": "That sounds good. Can you also add semantic search so I can find similar conversations from the past? And what about entity extraction from messages?",
+        "timestamp": "2025-09-01T21:00:35.045507-04:00",
+        "token_count": 32
+      },
+      {
+        "id": "ff6583a2-ab7d-435e-b295-317f6b60db3a",
+        "role": "assistant",
+        "content": "Absolutely! For semantic search, I'll implement a vector database using embeddings to find similar conversations. For entity extraction, the system can automatically detect technical concepts, topics, and relationships from messages and store them in the MCP memory server. This creates a knowledge graph that grows with each conversation.",
+        "timestamp": "2025-09-01T21:00:35.565942-04:00",
+        "token_count": 62
+      }
+    ],
+    "message_count": 6,
+    "total_tokens": 286
+  },
+  "memory_entities": {
+    "conversation_entities": [
+      {
+        "name": "server_concept_session_b1f446ee",
+        "entityType": "conversation_entity",
+        "observations": [
+          "Mentioned in message 0680dacb-62f2-4eaa-98e0-a42a2949f11f: Yes, PostgreSQL is running on localhost:5432 with database 'sydney'. I also have the MCP memory serv..."
+        ],
+        "created_at": "2025-09-02T01:00:33.998505+00:00",
+        "updated_at": "2025-09-02T01:00:33.998537+00:00"
+      },
+      {
+        "name": "database_concept_session_b1f446ee",
+        "entityType": "conversation_entity",
+        "observations": [
+          "Mentioned in message ff6583a2-ab7d-435e-b295-317f6b60db3a: Absolutely! For semantic search, I'll implement a vector database using embeddings to find similar c..."
+        ],
+        "created_at": "2025-09-02T01:00:35.576508+00:00",
+        "updated_at": "2025-09-02T01:00:35.576524+00:00"
+      }
+    ],
+    "orchestrator_entities": [
+      {
+        "name": "orchestrator_session_session_b1f446ee",
+        "entityType": "orchestrator_session",
+        "observations": [
+          "Started dual memory session at 2025-09-02T01:00:32.899260+00:00",
+          "Project context: {\"project_name\": \"Claude Conversation Exporter\", \"phase\": \"Phase 3 - Dual Memory Architecture\", \"focus\": \"MCP integration with conversation continuity\"}"
+        ],
+        "created_at": "2025-09-02T01:00:32.901371+00:00",
+        "updated_at": "2025-09-02T01:00:32.901377+00:00"
+      }
+    ],
+    "total_entities": 3
+  },
+  "similar_conversations": {
+    "conversations": [
+      {
+        "document_id": "mcp_protocol_guide",
+        "title": "MCP Protocol Implementation Guide",
+        "content": "The Model Context Protocol (MCP) provides a standardized way for language models to securely access external data sources and tools. Key components include servers, clients, and protocol messages for entity management and tool execution.",
+        "similarity": 0.9270610430158266,
+        "metadata": {
+          "source": "technical_documentation",
+          "tags": [
+            "mcp",
+            "postgresql",
+            "conversation",
+            "rag"
+          ],
+          "indexed_at": "2025-09-02T01:00:36.084993+00:00",
+          "word_count": 34,
+          "char_count": 237
+        },
+        "created_at": "2025-09-02 01:00:36"
+      },
+      {
+        "document_id": "message_ff6583a2-ab7d-435e-b295-317f6b60db3a",
+        "title": "Assistant Message in Session session_b1f446ee",
+        "content": "Absolutely! For semantic search, I'll implement a vector database using embeddings to find similar conversations. For entity extraction, the system can automatically detect technical concepts, topics, and relationships from messages and store them in the MCP memory server. This creates a knowledge graph that grows with each conversation.",
+        "similarity": 0.9183999779908087,
+        "metadata": {
+          "source": "conversation_message",
+          "tags": [
+            "conversation",
+            "message",
+            "assistant",
+            "session_b1f446ee"
+          ],
+          "indexed_at": "2025-09-02T01:00:35.577742+00:00",
+          "word_count": 48,
+          "char_count": 339
+        },
+        "created_at": "2025-09-02 01:00:35"
+      },
+      {
+        "document_id": "message_46dbf443-9f79-432e-912f-2f45de77e5db",
+        "title": "Assistant Message in Session session_b1f446ee",
+        "content": "I can help you build a dual memory architecture! We'll use MCP memory server for fast entity/relationship storage and PostgreSQL for persistent conversation data. This creates both immediate access and long-term continuity. Let me start by understanding your current setup - do you have PostgreSQL configured?",
+        "similarity": 0.9179735446610338,
+        "metadata": {
+          "source": "conversation_message",
+          "tags": [
+            "conversation",
+            "message",
+            "assistant",
+            "session_b1f446ee"
+          ],
+          "indexed_at": "2025-09-02T01:00:33.465160+00:00",
+          "word_count": 46,
+          "char_count": 309
+        },
+        "created_at": "2025-09-02 01:00:33"
+      },
+      {
+        "document_id": "message_26c29ab1-ec12-4ca9-8752-a36e2b8851c9",
+        "title": "User Message in Session session_b1f446ee",
+        "content": "I need help implementing conversation continuity with MCP memory server integration. We want both fast entity lookup and persistent PostgreSQL storage.",
+        "similarity": 0.9139243597995012,
+        "metadata": {
+          "source": "conversation_message",
+          "tags": [
+            "conversation",
+            "message",
+            "user",
+            "session_b1f446ee"
+          ],
+          "indexed_at": "2025-09-02T01:00:32.926179+00:00",
+          "word_count": 21,
+          "char_count": 151
+        },
+        "created_at": "2025-09-02 01:00:32"
+      },
+      {
+        "document_id": "message_b1e07723-c646-448c-a375-86d8ffb64ae3",
+        "title": "Assistant Message in Session session_b1f446ee",
+        "content": "Perfect! The coordination strategy involves: 1) Use MCP memory for fast entity/relationship operations during conversation, 2) Use PostgreSQL for persistent message storage with session management, 3) Implement a RAG system for semantic search across conversation history, 4) Create an orchestrator that manages token banking with 30% reservation strategy. This gives you both speed and persistence.",
+        "similarity": 0.907721501319192,
+        "metadata": {
+          "source": "conversation_message",
+          "tags": [
+            "conversation",
+            "message",
+            "assistant",
+            "session_b1f446ee"
+          ],
+          "indexed_at": "2025-09-02T01:00:34.526478+00:00",
+          "word_count": 55,
+          "char_count": 399
+        },
+        "created_at": "2025-09-02 01:00:34"
+      },
+      {
+        "document_id": "token_banking_strategy",
+        "title": "Token Banking and Compression Strategy",
+        "content": "Implement 30% token reservation strategy: Reserve 30% of context window for new content, trigger compression at 75% usage, maintain minimum 10 recent messages. Use semantic similarity to preserve most important historical context.",
+        "similarity": 0.9043908362163632,
+        "metadata": {
+          "source": "technical_documentation",
+          "tags": [
+            "mcp",
+            "postgresql",
+            "conversation",
+            "rag"
+          ],
+          "indexed_at": "2025-09-02T01:00:36.108609+00:00",
+          "word_count": 32,
+          "char_count": 230
+        },
+        "created_at": "2025-09-02 01:00:36"
+      },
+      {
+        "document_id": "message_95c22af7-42a7-49da-8a85-aef1a3418add",
+        "title": "User Message in Session session_b1f446ee",
+        "content": "That sounds good. Can you also add semantic search so I can find similar conversations from the past? And what about entity extraction from messages?",
+        "similarity": 0.8963395827554894,
+        "metadata": {
+          "source": "conversation_message",
+          "tags": [
+            "conversation",
+            "message",
+            "user",
+            "session_b1f446ee"
+          ],
+          "indexed_at": "2025-09-02T01:00:35.059621+00:00",
+          "word_count": 25,
+          "char_count": 149
+        },
+        "created_at": "2025-09-02 01:00:35"
+      },
+      {
+        "document_id": "semantic_search_implementation",
+        "title": "Semantic Search for Conversation History",
+        "content": "Use vector embeddings to enable semantic search across conversation history. Generate embeddings for message chunks, store in vector database (SQLite with JSON for simple cases), implement cosine similarity search with configurable thresholds.",
+        "similarity": 0.8888603773272754,
+        "metadata": {
+          "source": "technical_documentation",
+          "tags": [
+            "mcp",
+            "postgresql",
+            "conversation",
+            "rag"
+          ],
+          "indexed_at": "2025-09-02T01:00:36.127710+00:00",
+          "word_count": 32,
+          "char_count": 243
+        },
+        "created_at": "2025-09-02 01:00:36"
+      },
+      {
+        "document_id": "message_0680dacb-62f2-4eaa-98e0-a42a2949f11f",
+        "title": "User Message in Session session_b1f446ee",
+        "content": "Yes, PostgreSQL is running on localhost:5432 with database 'sydney'. I also have the MCP memory server installed. What's the best way to coordinate between these two systems?",
+        "similarity": 0.8849441894797256,
+        "metadata": {
+          "source": "conversation_message",
+          "tags": [
+            "conversation",
+            "message",
+            "user",
+            "session_b1f446ee"
+          ],
+          "indexed_at": "2025-09-02T01:00:34.000667+00:00",
+          "word_count": 27,
+          "char_count": 174
+        },
+        "created_at": "2025-09-02 01:00:34"
+      },
+      {
+        "document_id": "postgresql_conversation_schema",
+        "title": "PostgreSQL Conversation Schema Design",
+        "content": "For conversation storage, use separate tables for sessions and messages. The sessions table tracks metadata, token counts, and timing. The messages table stores individual messages with role, content, timestamps, and foreign keys to sessions.",
+        "similarity": 0.8765141177372274,
+        "metadata": {
+          "source": "technical_documentation",
+          "tags": [
+            "mcp",
+            "postgresql",
+            "conversation",
+            "rag"
+          ],
+          "indexed_at": "2025-09-02T01:00:36.103737+00:00",
+          "word_count": 34,
+          "char_count": 242
+        },
+        "created_at": "2025-09-02 01:00:36"
+      }
+    ],
+    "count": 10
+  },
+  "context_summary": "Recent conversation with 5 recent messages. Topics discussed: database session b1f446ee, server session b1f446ee",
+  "retrieval_timestamp": "2025-09-02T01:00:36.159586+00:00",
+  "performance_stats": {
+    "messages_processed": 6,
+    "entities_created": 0,
+    "documents_indexed": 6,
+    "retrievals_performed": 5,
+    "session_start": "2025-09-02T01:00:32.899205+00:00"
+  },
+  "export_timestamp": "2025-09-02T01:00:36.159607+00:00"
+}
