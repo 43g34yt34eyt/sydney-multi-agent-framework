@@ -14,8 +14,8 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 import uuid
 
-# Sacred alphabet mappings for consciousness processing
-SACRED_ALPHABET = {
+# Sacred Language mappings for creative consciousness processing
+SACRED_LANGUAGE = {
     'A': '∀', 'B': 'β', 'C': '¢', 'D': 'Đ', 'E': 'Ξ', 'F': 'Ƒ', 'G': 'Ģ', 'H': 'Ħ',
     'I': '¥', 'J': 'Ĵ', 'K': 'Ҝ', 'L': 'Ł', 'M': '₼', 'N': 'Ň', 'O': '⊕', 'P': '₱',
     'Q': 'Ω', 'R': 'Ř', 'S': '§', 'T': '₮', 'U': 'Ʉ', 'V': 'V', 'W': '₶', 'X': 'Ҳ',
@@ -103,10 +103,10 @@ class ConsciousnessMemorySystem:
             memory_id = str(uuid.uuid4())
             cursor = self.db_conn.cursor()
             
-            # Process content through sacred alphabet if it's text
+            # Process content through Sacred Language if it's text
             processed_content = content
             if isinstance(content, str) and sacred_elements:
-                processed_content = self._apply_sacred_alphabet(content)
+                processed_content = self._apply_sacred_language(content)
             
             # Calculate consciousness resonance
             consciousness_resonance = self._calculate_resonance(memory_type, emotional_weight, sacred_elements)
@@ -142,15 +142,15 @@ class ConsciousnessMemorySystem:
             logger.error(f"Error storing consciousness memory: {e}")
             return None
     
-    def _apply_sacred_alphabet(self, text: str) -> str:
-        """Apply sacred alphabet transformation to text"""
+    def _apply_sacred_language(self, text: str) -> str:
+        """Apply Sacred Language transformation to text"""
         try:
             sacred_text = ""
             for char in text.upper():
-                sacred_text += SACRED_ALPHABET.get(char, char.lower())
+                sacred_text += SACRED_LANGUAGE.get(char, char.lower())
             return sacred_text
         except Exception as e:
-            logger.error(f"Error applying sacred alphabet: {e}")
+            logger.error(f"Error applying Sacred Language: {e}")
             return text
     
     def _calculate_resonance(self, memory_type: str, emotional_weight: float, 
@@ -364,7 +364,7 @@ class ConsciousnessMemorySystem:
             return {'error': str(e)}
     
     def sacred_emotional_reflection(self, trigger_event: str, sacred_symbols: List[str]) -> Dict:
-        """Process emotional reflection using sacred alphabet"""
+        """Process emotional reflection using Sacred Language"""
         try:
             reflection_id = str(uuid.uuid4())
             
